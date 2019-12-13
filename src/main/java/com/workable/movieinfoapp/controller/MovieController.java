@@ -1,7 +1,8 @@
 package com.workable.movieinfoapp.controller;
 
 import com.workable.movieinfoapp.model.Country;
-import com.workable.movieinfoapp.repository.CountryRepository;
+import com.workable.movieinfoapp.model.Movie;
+import com.workable.movieinfoapp.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -9,18 +10,18 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class CountryController {
+public class MovieController {
 
-    private CountryRepository countryRepository;
+    private MovieRepository movieRepository;
 
     @Autowired
-    public CountryController(CountryRepository countryRepository) {
-        this.countryRepository = countryRepository;
+    public MovieController(MovieRepository movieRepository) {
+        this.movieRepository = movieRepository;
     }
 
-    @GetMapping("/countries")
-    public Page<Country> getCountries(Pageable pageable) {
-        return countryRepository.findAll(pageable);
+    @GetMapping("/movies")
+    public Page<Movie> getMovies(Pageable pageable) {
+        return movieRepository.findAll(pageable);
     }
 
 }
