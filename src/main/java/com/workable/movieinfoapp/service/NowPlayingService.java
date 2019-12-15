@@ -1,15 +1,14 @@
 package com.workable.movieinfoapp.service;
 
 import com.workable.movieinfoapp.model.Country;
-import com.workable.movieinfoapp.model.NowPlaying;
+import com.workable.movieinfoapp.themoviedb.model.NowPlaying;
 import com.workable.movieinfoapp.repository.CountryRepository;
-import com.workable.movieinfoapp.repository.NowPlayingRepository;
+import com.workable.movieinfoapp.themoviedb.repository.NowPlayingRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 @Service
 public class NowPlayingService {
@@ -28,10 +27,12 @@ public class NowPlayingService {
     public void getNowPlaying() {
         List<Country> countries = countryRepository.findAll();
 
-        List<List<NowPlaying>> collect = countries
+        List<NowPlaying> nowPlayingList = countries
                 .stream()
                 .map(country -> nowPlayingRepository.getNowPlaying(API_KEY, country.getCode()))
                 .collect(Collectors.toList());
+
+
     }
 
 }

@@ -1,4 +1,4 @@
-package com.workable.movieinfoapp.model;
+package com.workable.movieinfoapp.themoviedb.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
