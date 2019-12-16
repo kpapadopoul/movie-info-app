@@ -1,6 +1,5 @@
 package com.workable.movieinfoapp.controller;
 
-import com.workable.movieinfoapp.model.Country;
 import com.workable.movieinfoapp.model.CurrentlyInTheaters;
 import com.workable.movieinfoapp.repository.CurrentlyInTheatersRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +18,7 @@ public class CurrentlyInTheatersController {
         this.currentlyInTheatersRepository = currentlyInTheatersRepository;
     }
 
-    @GetMapping("/currentlyInTheaters")
+    @GetMapping("/currently-in-theaters")
     public Page<CurrentlyInTheaters> getCurrentlyInTheaters(Pageable pageable) {
         return currentlyInTheatersRepository.findAll(pageable);
     }

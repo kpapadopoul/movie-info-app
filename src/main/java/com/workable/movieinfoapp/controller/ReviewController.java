@@ -1,6 +1,5 @@
 package com.workable.movieinfoapp.controller;
 
-import com.workable.movieinfoapp.model.Person;
 import com.workable.movieinfoapp.model.Review;
 import com.workable.movieinfoapp.repository.ReviewRepository;
 import org.springframework.beans.factory.annotation.Autowired;

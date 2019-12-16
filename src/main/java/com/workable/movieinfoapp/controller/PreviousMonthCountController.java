@@ -18,7 +18,7 @@ public class PreviousMonthCountController {
         this.previousMonthCountService = previousMonthCountService;
     }
 
-    @GetMapping("/previousMonthCount")
+    @GetMapping("/previous-month-count")
     public List<MoviesCount> getPreviousMonthCount() {
         return previousMonthCountService.getPreviousMonthCount();
     }

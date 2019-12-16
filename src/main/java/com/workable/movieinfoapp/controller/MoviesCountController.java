@@ -1,6 +1,5 @@
 package com.workable.movieinfoapp.controller;
 
-import com.workable.movieinfoapp.model.Movie;
 import com.workable.movieinfoapp.model.MoviesCount;
 import com.workable.movieinfoapp.repository.MoviesCountRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,12 +22,12 @@ public class MoviesCountController {
         this.moviesCountRepository = moviesCountRepository;
     }
 
-    @GetMapping("/moviesCount")
+    @GetMapping("/movies-count")
     public Page<MoviesCount> getMoviesCount(Pageable pageable) {
         return moviesCountRepository.findAll(pageable);
     }
 
-    @PostMapping("/moviesCount")
+    @PostMapping("/movies-count")
     public MoviesCount createMoviesCount(@Valid @RequestBody MoviesCount moviesCount) {
         return moviesCountRepository.save(moviesCount);
     }

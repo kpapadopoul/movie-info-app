@@ -17,7 +17,7 @@ public class NowPlayingController {
         this.nowPlayingService = nowPlayingService;
     }
 
-    @GetMapping("/nowPlaying")
+    @GetMapping("/now-playing")
     public NowPlayingControllerResponse getNowPlaying() {
         return nowPlayingService.getNowPlaying();
     }
