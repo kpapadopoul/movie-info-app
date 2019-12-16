@@ -1,15 +1,13 @@
 package com.workable.movieinfoapp.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
 @Entity
 @Table(name = "movies_count")
 public class MoviesCount {
 
     @Id
+    @GeneratedValue
     private Long id;
     private Long year;
     private Long month;
