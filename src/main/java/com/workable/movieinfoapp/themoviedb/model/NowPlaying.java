@@ -1,14 +1,16 @@
 package com.workable.movieinfoapp.themoviedb.model;
 
+import com.workable.movieinfoapp.model.Country;
+
 public class NowPlaying {
-    private String country;
+    private Country country;
     private NowPlayingResponse nowPlayingResponse;
 
-    public String getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(String country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 

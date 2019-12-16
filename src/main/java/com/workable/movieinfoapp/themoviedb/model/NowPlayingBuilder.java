@@ -1,7 +1,9 @@
 package com.workable.movieinfoapp.themoviedb.model;
 
+import com.workable.movieinfoapp.model.Country;
+
 public final class NowPlayingBuilder {
-    private String country;
+    private Country country;
     private NowPlayingResponse nowPlayingResponse;
 
     private NowPlayingBuilder() {
@@ -11,7 +13,7 @@ public final class NowPlayingBuilder {
         return new NowPlayingBuilder();
     }
 
-    public NowPlayingBuilder withCountry(String country) {
+    public NowPlayingBuilder withCountry(Country country) {
         this.country = country;
         return this;
     }

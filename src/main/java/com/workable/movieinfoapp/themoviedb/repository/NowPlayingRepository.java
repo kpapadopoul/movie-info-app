@@ -1,5 +1,6 @@
 package com.workable.movieinfoapp.themoviedb.repository;
 
+import com.workable.movieinfoapp.model.Country;
 import com.workable.movieinfoapp.themoviedb.model.NowPlaying;
 import com.workable.movieinfoapp.themoviedb.model.NowPlayingBuilder;
 import com.workable.movieinfoapp.themoviedb.model.NowPlayingResponse;
@@ -17,20 +18,19 @@ public class NowPlayingRepository {
         this.restTemplateBuilder = restTemplateBuilder;
     }
 
-    public NowPlaying getNowPlaying(String apiKey, String region) {
+    public NowPlaying getNowPlaying(String apiKey, Country country) {
 
         String url = String.format(
-                "https://api.themoviedb.org/3/movie/now_playing?api_key=%s&region=%s", apiKey, region);
+                "https://api.themoviedb.org/3/movie/now_playing?api_key=%s&region=%s", apiKey, country.getCode());
 
         NowPlayingResponse nowPlayingResponse = restTemplateBuilder
                 .build()
                 .getForObject(
                         url, NowPlayingResponse.class);
 
-
         return NowPlayingBuilder
                 .aNowPlaying()
-                .withCountry(region)
+                .withCountry(country)
                 .withNowPlayingResponse(nowPlayingResponse)
                 .build();
 
